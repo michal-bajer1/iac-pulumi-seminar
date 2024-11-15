@@ -134,7 +134,7 @@ Reference for live demo...
 1. Container app environment
    ```csharp
     var containerAppEnvironment = AzureContainerAppEnvironment.Create(
-        name: $"pulumi-example-cae--{location.Abbreviation}",
+        name: $"pulumi-example-cae-{location.Abbreviation}",
         location: location,
         resourceGroup: resourceGroup,
         logDestination: new AzureMonitorDestination()
@@ -240,12 +240,12 @@ Reference for live demo...
         location: location,
         containerName: "test-app",
         containerAppEnvironment: containerAppEnvironment,
-        fullImageName: $"",
-        containerResources: AzureContainerApp.GetResources(0.5, 2),
+        fullImageName: $"mcr.microsoft.com/k8se/quickstart:latest",
+        containerResources: AzureContainerApp.GetResources(0.5, 1),
         minReplicas: 1,
         maxReplicas: 2,
-        environmentVariables: null,
-        secrets: null,
+        environmentVariables: [],
+        secrets: [],
         dependsOn: database
     );
   ```
