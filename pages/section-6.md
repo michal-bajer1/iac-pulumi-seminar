@@ -516,6 +516,10 @@ Empowering teams while maintaining control
 }
 </style>
 
+  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
+    <div className="font-bold mb-1">⚠️ Optional Slide</div>
+  </div>
+
 <!--
 # Speaker Notes
 

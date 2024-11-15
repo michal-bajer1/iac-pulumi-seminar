@@ -9,6 +9,10 @@ class: text-center
 Rethinking Infrastructure Management
 </div>
 
+  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
+    <div className="font-bold mb-1">⚠️ Optional Slide</div>
+  </div>
+
 <!--
 # Speaker Notes
 Setup:
@@ -61,6 +65,10 @@ flowchart TB
   @apply p-4 rounded bg-blue-500 bg-opacity-10;
 }
 </style>
+
+  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
+    <div className="font-bold mb-1">⚠️ Optional Slide</div>
+  </div>
 
 <!--
 # Speaker Notes
@@ -167,6 +175,10 @@ flowchart TB
   @apply bg-green-500 bg-opacity-10;
 }
 </style>
+
+  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
+    <div className="font-bold mb-1">⚠️ Optional Slide</div>
+  </div>
 
 <!--
 # Speaker Notes

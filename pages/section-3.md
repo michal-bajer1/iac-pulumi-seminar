@@ -545,6 +545,10 @@ How Pulumi tracks your infrastructure
   * Azure Blob Storage
   * AWS S3
 
+  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
+    <div className="font-bold mb-1">⚠️ Optional Slide</div>
+  </div>
+
 <!--
 # Speaker Notes
 
@@ -600,6 +604,10 @@ graph LR
     E -->|Same| G[No Changes]
     style E fill:#f9f,stroke:#333
 ```
+
+  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
+    <div className="font-bold mb-1">⚠️ Optional Slide</div>
+  </div>
 
 <!--
 # Speaker Notes
@@ -761,6 +769,10 @@ sequenceDiagram
     LH-->>IDE: Return resource reference
     deactivate LH
 ```
+
+  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
+    <div className="font-bold mb-1">⚠️ Optional Slide</div>
+  </div>
 
 <!--
 # Speaker Notes
