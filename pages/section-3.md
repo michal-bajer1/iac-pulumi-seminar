@@ -62,7 +62,7 @@ hideInToc: true
 
 # Real-World Example: Container App
 
-```hcl {all|2-3|4-8|10-15|all}
+```hcl
 resource "azurerm_container_app" "example" {
   name                         = "example-app"
   resource_group_name         = azurerm_resource_group.example.name
@@ -109,7 +109,7 @@ hideInToc: true
 
 # Same Resource in Pulumi
 
-```csharp {all|1-2|4-5|7-13|all}
+```csharp {all|13|all}
 // Define container app with strongly-typed configuration
 var app = new ContainerApp("example-app", new ContainerAppArgs
 {
@@ -162,7 +162,7 @@ Turning infrastructure code into reusable components
 ::left::
 
 ## Raw Pulumi
-```csharp {all|1-2|3-8|all}
+```csharp
 // Basic database setup
 var database = new Database("demo-db", new DatabaseArgs
 {
@@ -178,7 +178,7 @@ var database = new Database("demo-db", new DatabaseArgs
 ::right::
 
 ## High-level SDK
-```csharp {all|1-2|3|4|all}
+```csharp
 // High-level patterns
 var database = new SqlDatabase("demo")
     .InResourceGroup(resourceGroup)
@@ -227,11 +227,11 @@ Building blocks of Pulumi infrastructure
   </div>
 
   <div v-click class="concept-box">
-    <div class="text-xl mb-2">🔧 Resources</div>
+    <div class="text-xl mb-2">🏗️ Stacks</div>
     <ul class="text-sm">
-      <li>Individual cloud components</li>
-      <li>Automatic dependency tracking</li>
-      <li>Lifecycle management</li>
+      <li>Environment instances</li>
+      <li>Configuration values</li>
+      <li>Independent state</li>
     </ul>
   </div>
 </div>
@@ -240,11 +240,11 @@ Building blocks of Pulumi infrastructure
 
 <div class="space-y-4">
   <div v-click class="concept-box">
-    <div class="text-xl mb-2">🏗️ Stacks</div>
+    <div class="text-xl mb-2">🔧 Resources</div>
     <ul class="text-sm">
-      <li>Environment instances</li>
-      <li>Configuration values</li>
-      <li>Independent state</li>
+      <li>Individual cloud components</li>
+      <li>Automatic dependency tracking</li>
+      <li>Lifecycle management</li>
     </ul>
   </div>
 
@@ -299,7 +299,7 @@ Examples of how Pulumi organizes infrastructure code
 ::left::
 
 ## Project
-```yaml {all|2|3|4-5|all}
+```yaml
 # Pulumi.yaml
 name: container-app
 runtime: dotnet
@@ -309,7 +309,7 @@ description: Base container app template
 ::right::
 
 ## Stacks
-```yaml {all|2|3-4|5-6|all}
+```yaml 
 # Pulumi.dev.yaml
 config:
   name: myapp-dev
@@ -355,7 +355,7 @@ hideInToc: true
 # Projects and Stacks in Practice
 
 ## Project Code (Implementation)
-```csharp {all|3-4|6-10|12-16|all}
+```csharp
 public class MyStack : Stack
 {
     // Constructor is the point of entry
@@ -395,54 +395,6 @@ Questions/Engagement:
 
 Next:
 - Look at stack operations
--->
-
----
-layout: default
-hideInToc: true
----
-
-# Stack Operations
-```bash {all|1-2|4-5|7-8|all}
-# List available stacks
-pulumi stack ls
-
-# Switch to development stack
-pulumi stack select dev
-
-# View stack configuration
-pulumi config
-```
-
-```bash
-# Stack operations output
-> pulumi config
-KEY                 VALUE
-location       westeurope
-resourceGroup  dev-rg
-name           myapp-dev
-size           small
-```
-
-<!--
-# Speaker Notes
-
-Setup:
-- Daily operations with stacks
-- Common commands
-- Configuration management
-
-Key Points:
-- Stack switching is easy
-- Config per environment
-- Clear separation
-
-Questions/Engagement:
-- "What would you configure?"
-- "Which environments need separate stacks?"
-
-Next:
-- Understanding resources
 -->
 
 ---
@@ -495,139 +447,6 @@ Questions/Engagement:
 
 Next:
 - State management
--->
-
----
-layout: two-cols-header
-hideInToc: true
----
-
-# State Management
-
-How Pulumi tracks your infrastructure
-
-::left::
-
-## State Example
-```json {all|2-3|4-8|9-12|all}
-{
-   "version": 3,
-    "deployment": {
-        "manifest": {
-            "time": "2024-11-07T10:20:28.011938947Z",
-            "version": "v3.137.0"
-        },
-        "resources": [
-            {
-                "urn": "urn:pulumi:uuid",
-                "custom": true,
-                "id": "/subscriptions/*/resourceGroups/***/example",
-                "type": "azure-native:app/v20230501:ManagedEnvironment",
-                "outputs": {
-                    // Values returned by Azure API for the resource
-                }
-            },
-            // More resources
-}
-```
-
-::right::
-
-## Backend Options
-
-- **Pulumi Cloud**
-  * Managed state storage
-  * Team collaboration
-  * History and audit
-  * RBAC support
-
-- **Self-Hosted**
-  * Azure Blob Storage
-  * AWS S3
-
-  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
-    <div className="font-bold mb-1">⚠️ Optional Slide</div>
-  </div>
-
-<!--
-# Speaker Notes
-
-Setup:
-- State tracks everything
-- Critical for operations
-- Backend choices matter
-
-Key Points:
-- State is source of truth (or is it?)
-- Records all resources
-- Team collaboration needs
-
-Questions/Engagement:
-- "What happens if state is lost?"
-
-Next:
-- Working with state
--->
-
----
-layout: center
-hideInToc: true
----
-
-# Working with State
-
-## Common State Operations
-
-```bash {all|1-2|4-5|7-8|10-11|all}
-# View current state
-pulumi stack
-
-# Refresh state from cloud
-pulumi refresh
-
-# Export state backup
-pulumi stack export --file backup.json
-
-# Import state
-pulumi stack import --file backup.json
-```
-
-## State & Reality
-
-```mermaid {scale: 0.7}
-graph LR
-    A[Pulumi Code] --> B[Desired State]
-    C[Current State] --> D[Actual Resources]
-    B --> E{Compare}
-    D --> E
-    E -->|Different| F[Update Plan]
-    E -->|Same| G[No Changes]
-    style E fill:#f9f,stroke:#333
-```
-
-  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
-    <div className="font-bold mb-1">⚠️ Optional Slide</div>
-  </div>
-
-<!--
-# Speaker Notes
-
-Setup:
-- State operations are critical
-- Reality can drift
-- Regular maintenance needed
-
-Key Points:
-- Refresh syncs state
-- Export for backup
-- Import for recovery
-
-Questions/Engagement:
-- "When might state drift?"
-- "How would you prevent it?"
-
-Next:
-- Architecture overview
 -->
 
 ---
@@ -770,10 +589,6 @@ sequenceDiagram
     deactivate LH
 ```
 
-  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
-    <div className="font-bold mb-1">⚠️ Optional Slide</div>
-  </div>
-
 <!--
 # Speaker Notes
 
@@ -827,7 +642,11 @@ hideInToc: true
   </div>
 
   <div v-click class="question">
-    What if I losse my state storage?
+    What if I loose my state storage?
+  </div>
+
+  <div v-click class="question">
+    What if somebody changes resource manually?
   </div>
 </div>
 

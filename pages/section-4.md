@@ -399,3 +399,64 @@ Questions/Engagement:
 Next:
 - Understanding limitations
 -->
+
+---
+layout: center
+hideInToc: true
+---
+
+# Working with State
+
+## Common State Operations
+
+```bash {all|1-2|4-5|7-8|10-11|all}
+# View current state
+pulumi stack
+
+# Refresh state from cloud
+pulumi refresh
+
+# Export state backup
+pulumi stack export --file backup.json
+
+# Import state
+pulumi stack import --file backup.json
+```
+
+## State & Reality
+
+```mermaid {scale: 0.7}
+graph LR
+    A[Pulumi Code] --> B[Desired State]
+    C[Current State] --> D[Actual Resources]
+    B --> E{Compare}
+    D --> E
+    E -->|Different| F[Update Plan]
+    E -->|Same| G[No Changes]
+    style E fill:#f9f,stroke:#333
+```
+
+  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
+    <div className="font-bold mb-1">⚠️ Optional Slide</div>
+  </div>
+
+<!--
+# Speaker Notes
+
+Setup:
+- State operations are critical
+- Reality can drift
+- Regular maintenance needed
+
+Key Points:
+- Refresh syncs state
+- Export for backup
+- Import for recovery
+
+Questions/Engagement:
+- "When might state drift?"
+- "How would you prevent it?"
+
+Next:
+- Architecture overview
+-->

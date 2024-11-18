@@ -84,6 +84,59 @@ layout: center
 hideInToc: true
 ---
 
+# Systems Architecture Evolution
+How software systems grew in complexity and scale
+
+```mermaid
+timeline
+    section Early 2000s
+        Monolithic : Single Application
+        : One Database
+        : Simple Deploy
+    section Mid 2000s
+        Service-Oriented : Multiple Services
+        : Multiple Databases
+        : Coordinated Deploy
+    section 2010s
+        Cloud Native : Microservices
+        : Distributed Data
+        : Container Deploy
+        : Kubernetes
+    section 2020s
+        Modern : Serverless & Containers
+        : Many services, many databases
+        : Multi-cloud
+        : Continuous Deployments
+```
+
+<!--
+# Speaker Notes
+
+Setup:
+- Connect to their software experience
+- System architecture drove infrastructure
+- Still happening today
+
+Key Points:
+- Monolith: Simple but limiting
+- Services: Team independence
+- Cloud Native: Infrastructure complexity
+- Modern: Mix of approaches
+
+Questions/Engagement:
+- "Have you worked on any team projects?"
+- "Which architectures have you worked with?"
+- "What drove your architecture choices?"
+
+Next:
+- See how this affected operations
+-->
+
+---
+layout: center
+hideInToc: true
+---
+
 # Infrastructure Evolution Metrics
 Quantifying the impact of infrastructure transformation
 
@@ -149,100 +202,6 @@ Questions/Engagement:
 
 Next:
 - Look at what drove these changes
--->
-
----
-layout: center
-hideInToc: true
----
-
-# Systems Architecture Evolution
-How software systems grew in complexity and scale
-
-```mermaid
-timeline
-    section Early 2000s
-        Monolithic : Single Application
-        : One Database
-        : Simple Deploy
-    section Mid 2000s
-        Service-Oriented : Multiple Services
-        : Multiple Databases
-        : Coordinated Deploy
-    section 2010s
-        Cloud Native : Microservices
-        : Distributed Data
-        : Container Deploy
-        : Kubernetes
-    section 2020s
-        Modern : Serverless & Containers
-        : Many services, many databases
-        : Multi-cloud
-        : Continuous Deployments
-```
-
-<!--
-# Speaker Notes
-
-Setup:
-- Connect to their software experience
-- System architecture drove infrastructure
-- Still happening today
-
-Key Points:
-- Monolith: Simple but limiting
-- Services: Team independence
-- Cloud Native: Infrastructure complexity
-- Modern: Mix of approaches
-
-Questions/Engagement:
-- "Have you worked on any team projects?"
-- "Which architectures have you worked with?"
-- "What drove your architecture choices?"
-
-Next:
-- See how this affected operations
--->
-
----
-layout: center
-hideInToc: true
----
-
-# Key System Characteristics
-
-<v-clicks>
-
-- Monolithic: One team, one deploy, one database
-- Service-Oriented: Multiple teams, coordinated deploys
-- Cloud Native: Many small services, continuous deployment
-- Modern: Mix of serverless, containers, and cloud services
-
-</v-clicks>
-
-<div v-click class="mt-12 text-center text-xl">
-
-💡 More Components = More Infrastructure Complexity
-
-</div>
-
-<!--
-# Speaker Notes
-
-Setup:
-- Each stage brought new challenges
-- Progress wasn't always smooth
-- Different teams moved at different speeds
-
-Expand on each point:
-- Monolithic: Like your early one person projects - simple stack
-- SOA: Teams start interfering with each other, need coordination
-- Cloud Native: Kubernetes entered the scene and more complex automated orchestration becomes accesible
-- Modern: Mix of approaches based on needs
-
-Key message: Infrastructure complexity follows system complexity - this is why we need better tools and practices.
-
-Question to ask: "What architectures have you seen and worked with?"
 -->
 
 ---
