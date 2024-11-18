@@ -444,9 +444,6 @@ Resource characteristics:
 
 Questions/Engagement:
 - "How do you handle dependencies without IaC?"
-
-Next:
-- State management
 -->
 
 ---

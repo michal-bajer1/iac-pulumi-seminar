@@ -409,7 +409,7 @@ hideInToc: true
 
 ## Common State Operations
 
-```bash {all|1-2|4-5|7-8|10-11|all}
+```bash
 # View current state
 pulumi stack
 
@@ -436,10 +436,6 @@ graph LR
     style E fill:#f9f,stroke:#333
 ```
 
-  <div className="fixed top-4 right-4 p-2 rounded bg-red-500 bg-opacity-20 border border-red-500 text-sm text-red-700 max-w-xs">
-    <div className="font-bold mb-1">⚠️ Optional Slide</div>
-  </div>
-
 <!--
 # Speaker Notes
 
@@ -456,7 +452,4 @@ Key Points:
 Questions/Engagement:
 - "When might state drift?"
 - "How would you prevent it?"
-
-Next:
-- Architecture overview
 -->

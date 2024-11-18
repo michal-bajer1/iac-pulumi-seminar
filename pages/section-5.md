@@ -257,8 +257,7 @@ Using C# for Infrastructure Management
     <div class="text-xl mb-2">🛠️ Development Features</div>
     <ul class="text-sm">
       <li>Strong Type System</li>
-      <li>IDE Support</li>
-      <li>Refactoring Tools</li>
+      <li>IDE Support (refactoring)</li>
       <li>Package Ecosystem</li>
       <li>Testing Framework?</li>
     </ul>
@@ -272,7 +271,6 @@ Using C# for Infrastructure Management
     <div class="text-xl mb-2">📚 Code Organization</div>
     <ul class="text-sm">
       <li>Classes and Inheritance</li>
-      <li>Error Handling</li>
       <li>Documentation Comments</li>
       <li>Code Sharing</li>
       <li>Team Collaboration</li>

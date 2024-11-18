@@ -277,25 +277,28 @@ Infrastructure managed with the same rigor as application code
   <ul>
     <li>Version controlled</li>
     <li>Code reviews</li>
+    <li>Reduced human error</li>
     <li>Testing enabled</li>
     <li>Clear history</li>
     <li>Team collaboration</li>
+    <li>Automated deployment</li>
+    <li>Validations</li>
   </ul>
 </div>
 
 ::right::
 
 <div v-click class="principle-box">
-  <div class="text-xl mb-2">Automation First</div>
+  <div class="text-xl mb-2"><span v-mark.underline>Declarative</span> Definitions</div>
   <ul>
-    <li>Repeatable processes</li>
-    <li>Consistent results</li>
-    <li>Reduced human error</li>
-    <li>Scalable operations</li>
-    <li>Policy enforcement</li>
-    <li>Validations</li>
+    <li>Describe desired state</li>
+    <li>System handles "how"</li>
+    <li>Predictable results</li>
+    <li>Dependency management</li>
+    <li>Idempotency</li>
   </ul>
 </div>
+
 
 <style>
 .principle-box {
@@ -322,66 +325,6 @@ Questions/Engagement:
 
 Next:
 - More principles to consider
--->
-
----
-layout: two-cols-header
-hideInToc: true
----
-
-# Core IaC Principles #2
-Declarative definitions and immutable infrastructure
-
-::left::
-
-<div v-click class="principle-box">
-  <div class="text-xl mb-2"><span v-mark.underline>Declarative</span> Definitions</div>
-  <ul>
-    <li>Describe desired state</li>
-    <li>System handles "how"</li>
-    <li>Predictable results</li>
-    <li>Dependency management</li>
-    <li>Idempotency</li>
-  </ul>
-</div>
-
-::right::
-
-<div v-click class="principle-box">
-  <div class="text-xl mb-2">Immutable Infrastructure</div>
-  <ul>
-    <li>No manual changes</li>
-    <li>Replace vs modify</li>
-    <li>Versioned states</li>
-    <li>Easy rollbacks</li>
-  </ul>
-</div>
-
-<style>
-.principle-box {
-  @apply p-4 rounded bg-gray-100 bg-opacity-10;
-}
-</style>
-
-<!--
-# Speaker Notes
-
-Setup:
-- These build on previous principles
-- More focused on operations
-- Different way of thinking
-
-Key Points:
-- Describe what, not how
-- Don't modify, replace
-- State-driven approach
-
-Questions/Engagement:
-- "How is this different from scripting?"
-- "Where might this help?"
-
-Next:
-- Look at available tools
 -->
 
 ---
