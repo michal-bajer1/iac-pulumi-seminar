@@ -66,3 +66,13 @@ src: ./pages/section-5.md
 ---
 src: ./pages/section-6.md
 ---
+
+---
+layout: center
+hideInToc: true
+---
+
+# Further reading
+
+- [How Pulumi works?](https://www.pulumi.com/docs/iac/concepts/how-pulumi-works/)
+- [Systems initiative - new ideas in IaC](https://faun.pub/turning-devops-into-a-real-time-multiplayer-game-system-initiative-rewrites-the-laws-of-devops-f20caeb6e869)
