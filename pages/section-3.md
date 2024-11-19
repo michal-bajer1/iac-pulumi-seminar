@@ -355,7 +355,7 @@ hideInToc: true
 # Projects and Stacks in Practice
 
 ## Project Code (Implementation)
-```csharp
+```csharp {all|13|all}
 public class MyStack : Stack
 {
     // Constructor is the point of entry
@@ -411,7 +411,7 @@ graph TB
     B -..->|Depends On| C
 ```
 
-```csharp {all|1-2|4-5|7-8|all}
+```csharp
 // Resource Definition
 var resourceGroup = new ResourceGroup("rg-demo");
 
