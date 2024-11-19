@@ -457,7 +457,7 @@ var app = new ContainerApp("app-demo",
 }
 
 .concept-item {
-  @apply flex items-center space-x-2 bg-blue-50 bg-opacity-50 p-1 rounded;
+  @apply flex text-xl p-2 rounded bg-gray-100 bg-opacity-10;
 }
 </style>
 
@@ -552,7 +552,7 @@ graph TB
 
 <style>
 .concept-card {
-  @apply bg-blue-50 bg-opacity-30 p-2 rounded-lg transition-all;
+  @apply bg-gray-100 bg-opacity-10 p-2 rounded-lg transition-all;
 }
 
 .concept-card .title {
