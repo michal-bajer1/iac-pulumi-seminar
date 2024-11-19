@@ -255,7 +255,7 @@ layout: center
 hideInToc: true
 ---
 
-# Quick Questions
+# Quick Questions ✋
 
 <div class="text-xl space-y-8">
   <div v-click class="question">

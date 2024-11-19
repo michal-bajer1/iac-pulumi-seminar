@@ -26,7 +26,7 @@ Building blocks of our demo environment
 
   <div v-click class="resource-group">
     <div class="text-4xl mb-2">💾</div>
-    <div class="text-xl">SQL Sever and Database</div>
+    <div class="text-xl">SQL Server and Database</div>
     <div class="text-sm opacity-75">Data storage</div>
   </div>
 
@@ -398,58 +398,4 @@ Questions/Engagement:
 
 Next:
 - Understanding limitations
--->
-
----
-layout: center
-hideInToc: true
----
-
-# Working with State
-
-## Common State Operations
-
-```bash
-# View current state
-pulumi stack
-
-# Refresh state from cloud
-pulumi refresh
-
-# Export state backup
-pulumi stack export --file backup.json
-
-# Import state
-pulumi stack import --file backup.json
-```
-
-## State & Reality
-
-```mermaid {scale: 0.7}
-graph LR
-    A[Pulumi Code] --> B[Desired State]
-    C[Current State] --> D[Actual Resources]
-    B --> E{Compare}
-    D --> E
-    E -->|Different| F[Update Plan]
-    E -->|Same| G[No Changes]
-    style E fill:#f9f,stroke:#333
-```
-
-<!--
-# Speaker Notes
-
-Setup:
-- State operations are critical
-- Reality can drift
-- Regular maintenance needed
-
-Key Points:
-- Refresh syncs state
-- Export for backup
-- Import for recovery
-
-Questions/Engagement:
-- "When might state drift?"
-- "How would you prevent it?"
 -->

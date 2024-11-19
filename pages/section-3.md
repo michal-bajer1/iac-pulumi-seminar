@@ -225,36 +225,17 @@ Building blocks of Pulumi infrastructure
       <li>Version controlled together</li>
     </ul>
   </div>
-
-  <div v-click class="concept-box">
-    <div class="text-xl mb-2">🏗️ Stacks</div>
-    <ul class="text-sm">
-      <li>Environment instances</li>
-      <li>Configuration values</li>
-      <li>Independent state</li>
-    </ul>
-  </div>
 </div>
 
 ::right::
 
 <div class="space-y-4">
   <div v-click class="concept-box">
-    <div class="text-xl mb-2">🔧 Resources</div>
+    <div class="text-xl mb-2">🏗️ Stacks</div>
     <ul class="text-sm">
-      <li>Individual cloud components</li>
-      <li>Automatic dependency tracking</li>
-      <li>Lifecycle management</li>
-    </ul>
-  </div>
-
-  <div v-click class="concept-box">
-    <div class="text-xl mb-2">📊 State</div>
-    <ul class="text-sm">
-      <li>Resource tracking</li>
-      <li>Change detection</li>
-      <li>Team synchronization</li>
-      <li>State locking</li>
+      <li>Environment instances</li>
+      <li>Configuration values</li>
+      <li>Independent state</li>
     </ul>
   </div>
 </div>
@@ -398,52 +379,216 @@ Next:
 -->
 
 ---
-layout: center
+layout: two-cols-header
 hideInToc: true
 ---
 
 # Understanding Resources
+Core building blocks of cloud infrastructure
 
-```mermaid {scale: 0.8}
+::left::
+
+<v-click>
+
+## Key Concepts
+<div class="concept-list">
+  <div class="concept-item">
+    <div class="icon">📦</div>
+    <div class="text">Individual cloud components</div>
+  </div>
+  <div class="concept-item">
+    <div class="icon">🔄</div>
+    <div class="text">Automatic dependency tracking</div>
+  </div>
+  <div class="concept-item">
+    <div class="icon">⚙️</div>
+    <div class="text">Lifecycle management</div>
+  </div>
+</div>
+
+</v-click>
+
+```mermaid {scale: 0.5}
 graph TB
-    A[Resource Group] --> B[Container App]
-    A --> C[SQL Server]
-    B -..->|Depends On| C
+    subgraph "Resource Group"
+        RG[Resource Group]
+        SQL[SQL Server]
+        APP[Container App]
+    end
+    
+    RG --> SQL
+    RG --> APP
+    SQL -.->|"Connection"| APP
 ```
 
+::right::
+
+<div class="ml-4">
+
+
+
+<v-click>
+
+## Implementation
 ```csharp
 // Resource Definition
 var resourceGroup = new ResourceGroup("rg-demo");
 
 // Implicit Dependencies
-var server = new SqlServer("sql-demo", new SqlServerArgs { ResourceGroupName = resourceGroup.Name });
+var server = new SqlServer("sql-demo", new SqlServerArgs { 
+    ResourceGroupName = resourceGroup.Name 
+});
 
 // Explicit Dependencies
-var app = new ContainerApp("app-demo", new ContainerAppArgs { ... }, new CustomResourceOptions { DependsOn = { server } });
+var app = new ContainerApp("app-demo", 
+    new ContainerAppArgs { ... }, 
+    new CustomResourceOptions { 
+        DependsOn = { server } 
+    });
 ```
+
+</v-click>
+
+</div>
+
+<style>
+.concept-list {
+  @apply space-y-2 my-2;
+}
+
+.concept-item {
+  @apply flex items-center space-x-2 bg-blue-50 bg-opacity-50 p-1 rounded;
+}
+</style>
 
 <!--
 # Speaker Notes
 
-Setup:
-- Resources are building blocks
-- Dependencies matter
-- Automatic ordering
+Key points to emphasize:
+1. Resources are fundamental units of cloud infrastructure
+2. Dependencies can be implicit (resource hierarchy) or explicit
+3. Pulumi automatically tracks and manages dependencies
+4. The dependency graph determines deployment order
+5. Show how code reflects the visual diagram structure
 
-Key Points:
-- Implicit vs explicit deps
-- Pulumi builds dependency graph
-- Graph determines order
-- Safe updates
+Interaction suggestions:
+- Ask audience to identify dependencies in the diagram
+- Point out how the code maps to visual relationships
+- Discuss when to use explicit vs implicit dependencies
+-->
+---
+layout: two-cols-header
+hideInToc: true
+---
 
-Resource characteristics:
-1. Unique identity
-2. Tracked state
-3. Dependencies
-4. Lifecycle management
+# State Management
+How Pulumi tracks and manages your infrastructure
 
-Questions/Engagement:
-- "How do you handle dependencies without IaC?"
+::left::
+
+<div class="core-concepts space-y-2 pr-2">
+  <v-click>
+    <div class="concept-card">
+      <div class="title">
+        <div class="icon">📝</div>
+        <div class="text">Resource Tracking</div>
+      </div>
+      <div class="description">
+        Maintains detailed record of all deployed resources and their properties
+      </div>
+    </div>
+  </v-click>
+
+  <v-click>
+    <div class="concept-card">
+      <div class="title">
+        <div class="icon">🔄</div>
+        <div class="text">Change Detection</div>
+      </div>
+      <div class="description">
+        Compares desired state with current state to determine required changes
+      </div>
+    </div>
+  </v-click>
+
+  <v-click>
+    <div class="concept-card">
+      <div class="title">
+        <div class="icon">🔒</div>
+        <div class="text">State Locking</div>
+      </div>
+      <div class="description">
+        Prevents concurrent modifications to avoid conflicts
+      </div>
+    </div>
+  </v-click>
+
+  <v-click>
+    <div class="concept-card">
+      <div class="title">
+        <div class="icon">🤝</div>
+        <div class="text">Team Synchronization</div>
+      </div>
+      <div class="description">
+        Enables collaboration through shared state backend
+      </div>
+    </div>
+  </v-click>
+</div>
+
+::right::
+
+## State & Reality
+
+```mermaid {scale: 0.7}
+graph TB
+    A[Pulumi Code] --> B[Desired State]
+    C[Current State] --> D[Actual Resources]
+    B --> E{Compare}
+    D --> E
+    E -->|Different| F[Update Plan]
+    E -->|Same| G[No Changes]
+```
+
+<style>
+.concept-card {
+  @apply bg-blue-50 bg-opacity-30 p-2 rounded-lg transition-all;
+}
+
+.concept-card .title {
+  @apply flex items-center space-x-1 mb-1;
+}
+
+.concept-card .icon {
+  @apply text-1xl;
+}
+
+.concept-card .text {
+  @apply font-semibold;
+}
+</style>
+
+<!--
+# Speaker Notes
+
+Key points to emphasize:
+1. State is the source of truth
+2. Regular refresh keeps state accurate
+3. Preview shows planned changes
+4. State locking prevents conflicts
+5. Team collaboration through shared state
+
+Flow explanation:
+- Code defines desired state
+- Current state tracks deployed resources
+- Compare differences to create plan
+- Apply changes when needed
+- Refresh syncs state with reality
+
+Tips:
+- Demonstrate refresh workflow
+- Show common state drift scenarios
+- Discuss team collaboration practices
 -->
 
 ---
@@ -639,7 +784,7 @@ hideInToc: true
   </div>
 
   <div v-click class="question">
-    What if I loose my state storage?
+    What if I lose my state storage?
   </div>
 
   <div v-click class="question">

@@ -279,10 +279,7 @@ Infrastructure managed with the same rigor as application code
     <li>Code reviews</li>
     <li>Reduced human error</li>
     <li>Testing enabled</li>
-    <li>Clear history</li>
-    <li>Team collaboration</li>
     <li>Automated deployment</li>
-    <li>Validations</li>
   </ul>
 </div>
 
@@ -325,70 +322,6 @@ Questions/Engagement:
 
 Next:
 - More principles to consider
--->
-
----
-layout: two-cols-header
-hideInToc: true
----
-
-# IaC Tools Landscape
-Different tools for different infrastructure needs
-
-::left::
-
-<div v-click class="tool-box">
-  <div class="text-xl mb-2">General Purpose</div>
-  <ul>
-    <li><strong>Terraform</strong> - Multi-cloud</li>
-    <li><strong>Pulumi</strong> - Multi-language</li>
-    <li><strong>CloudFormation</strong> - AWS</li>
-    <li><strong>ARM Templates</strong> - Azure</li>
-  </ul>
-</div>
-
-::right::
-
-<div v-click class="tool-box">
-  <div class="text-xl mb-2">Specialized Tools</div>
-  <ul>
-    <li><strong>Ansible</strong> - Configuration</li>
-    <li><strong>Chef</strong> - VM management</li>
-    <li><strong>Kubernetes</strong> - Containers</li>
-    <li><strong>Helm</strong> - Kubernetes packages</li>
-  </ul>
-</div>
-
-<style>
-.tool-box {
-  @apply p-4 rounded bg-gray-100 bg-opacity-10;
-}
-</style>
-
-<!--
-# Speaker Notes
-
-Setup:
-- Many tools solve different problems
-- No single perfect solution
-- Choose based on needs
-
-Key Points:
-- General vs specialized
-- Multi-cloud vs single cloud
-- Configuration vs provisioning
-- We'll focus on Pulumi because:
-  * Real programming languages
-  * Strong typing
-  * Familiar development experience
-
-Questions/Engagement:
-- "Used any of these?"
-- "Which would fit your needs?"
-- "Seen them in internships/jobs?"
-
-Next:
-- Focus on development workflow
 -->
 
 ---

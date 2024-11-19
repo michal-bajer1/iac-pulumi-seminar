@@ -3,7 +3,7 @@ layout: section
 class: text-center
 ---
 
-# Benefits and drawbacks
+# Benefits and Drawbacks
 
 <div class="opacity-80 italic mb-4">
 Key takeaways from demo 
@@ -73,76 +73,6 @@ Questions/Engagement:
 
 Next:
 - Team processes
--->
-
----
-layout: center
-hideInToc: true
----
-
-# Team Workflow
-Collaborative infrastructure management
-
-```mermaid {scale: 0.8}
-flowchart LR
-    A[Branch] --> B[Changes]
-    B --> C[Preview]
-    C --> D[PR]
-    subgraph Review
-        D --> E[Code Review]
-        E --> F[Plan Review]
-    end
-    Review --> G[Merge]
-    G --> H[Deploy]
-```
-
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div v-click class="review-point">
-    <div class="text-xl mb-2">👥 Review Points</div>
-    <ul class="text-sm">
-      <li>Code quality</li>
-      <li>Security checks</li>
-      <li>Cost impact</li>
-      <li>Best practices</li>
-    </ul>
-  </div>
-
-  <div v-click class="review-point">
-    <div class="text-xl mb-2">🔍 Validation</div>
-    <ul class="text-sm">
-      <li>Automated tests</li>
-      <li>Policy checks</li>
-      <li>Preview results</li>
-      <li>Change scope</li>
-    </ul>
-  </div>
-</div>
-
-<style>
-.review-point {
-  @apply p-4 rounded bg-gray-100 bg-opacity-10;
-}
-</style>
-
-<!--
-# Speaker Notes
-
-Setup:
-- Standard PR process
-- Multiple checkpoints
-- Team collaboration
-
-Key Points:
-- Code review first
-- Plan verification
-- Automated checks
-
-Questions/Engagement:
-- "Similar to your workflow?"
-- "What would you check?"
-
-Next:
-- Benefits and challenges
 -->
 
 ---
@@ -243,69 +173,6 @@ Next:
 -->
 
 ---
-layout: two-cols-header
-hideInToc: true
----
-
-# Language Benefits
-Using C# for Infrastructure Management
-
-::left::
-
-<div class="space-y-4">
-  <div v-click class="benefit">
-    <div class="text-xl mb-2">🛠️ Development Features</div>
-    <ul class="text-sm">
-      <li>Strong Type System</li>
-      <li>IDE Support (refactoring)</li>
-      <li>Package Ecosystem</li>
-      <li>Testing Framework?</li>
-    </ul>
-  </div>
-</div>
-
-::right::
-
-<div class="space-y-4">
-  <div v-click class="benefit">
-    <div class="text-xl mb-2">📚 Code Organization</div>
-    <ul class="text-sm">
-      <li>Classes and Inheritance</li>
-      <li>Documentation Comments</li>
-      <li>Code Sharing</li>
-      <li>Team Collaboration</li>
-    </ul>
-  </div>
-</div>
-
-<style>
-.benefit {
-  @apply p-4 rounded bg-green-500 bg-opacity-10;
-}
-</style>
-
-<!--
-# Speaker Notes
-
-Setup:
-- C# advantages
-- Developer experience
-- Team productivity
-
-Key Points:
-- Strong typing helps
-- IDE support
-- Code organization
-
-Questions/Engagement:
-- "Using these features now?"
-- "Which help most?"
-
-Next:
-- Platform building
--->
-
----
 layout: center
 hideInToc: true
 ---
@@ -313,6 +180,10 @@ hideInToc: true
 # Quick Questions
 
 <div class="text-xl space-y-8">
+  <div v-click class="question">
+    What are advantages of using programming language for IaC?
+  </div>
+
   <div v-click class="question">
     What about drawbacks of using programming language for IaC?
   </div>
