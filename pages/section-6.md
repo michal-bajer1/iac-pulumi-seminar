@@ -675,7 +675,7 @@ hideInToc: true
   </div>
   
   <div v-click class="question">
-    What if we had team use Azure directly?
+    What if we had teams use Azure directly?
   </div>
 </div>
 

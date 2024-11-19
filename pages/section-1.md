@@ -263,15 +263,11 @@ hideInToc: true
   </div>
 
   <div v-click class="question">
-    Experience with infrastructure tools?
+    Experience with Infrastructure as Code tools?
   </div>
 
   <div v-click class="question">
-    Automated deployment experience (CI/CD)?
-  </div>
-
-  <div v-click class="question">
-    Which tech stack?
+    Experience with CI/CD tools?
   </div>
 </div>
 
