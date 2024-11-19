@@ -406,8 +406,6 @@ Core building blocks of cloud infrastructure
   </div>
 </div>
 
-</v-click>
-
 ```mermaid {scale: 0.5}
 graph TB
     subgraph "Resource Group"
@@ -420,6 +418,7 @@ graph TB
     RG --> APP
     SQL -.->|"Connection"| APP
 ```
+</v-click>
 
 ::right::
 
